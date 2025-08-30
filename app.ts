@@ -28,7 +28,7 @@ const productThumbnail = "./images/image-product-1-thumbnail.jpg";
 
 // Toggles the mobile navigation menu
 function toggleMobileMenu(): void {
-  mainNav.classList.toggle('active'); // You'll need to add a .active style for the nav
+  mainNav.classList.toggle('active'); 
 }
 
 // Toggles the visibility of the cart popup

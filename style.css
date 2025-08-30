@@ -314,6 +314,7 @@ button {
     margin: 0 auto;
     padding: 2rem 0;
     border-bottom: 1px solid var(--grayish-blue);
+    position: relative;
   }
 
   .menu-btn, .close-btn, .gallery-nav {
@@ -364,7 +365,7 @@ button {
   .cart-popup {
     left: auto;
     right: 0;
-    top: 60px;
+    top: 90px;
     transform: none;
   }
   
