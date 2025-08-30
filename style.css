@@ -127,6 +127,10 @@ button {
   font-size: 1rem;
 }
 
+#cart-popup.active {
+  display: block;
+}
+
 .cart-content {
   padding: 1.5rem;
   min-height: 150px;
