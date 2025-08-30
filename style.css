@@ -157,6 +157,7 @@ button {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .gallery-nav {
@@ -311,6 +312,116 @@ button {
 }
 
 
+/* --- LIGHTBOX --- */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-lightbox); 
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 100%;
+  max-width: 550px; 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem; 
+}
+
+.close-lightbox-btn {
+  position: absolute;
+  top: -2.5rem;
+  right: 1rem; 
+  background: url('./images/icon-close.svg') no-repeat center;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.close-lightbox-btn:hover {
+  transform: scale(1.1);
+  background: url('./images/icon-close.svg') no-repeat center; 
+}
+
+.lightbox-main-image-container {
+  position: relative;
+}
+
+.lightbox-main-product-image {
+  border-radius: 15px;
+}
+
+.lightbox-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.lightbox-gallery-nav:hover {
+  opacity: 0.7;
+}
+
+.lightbox-prev {
+  left: -25px; 
+  background-image: url('./images/icon-previous.svg');
+}
+
+.lightbox-next {
+  right: -25px; 
+  background-image: url('./images/icon-next.svg');
+}
+
+.lightbox-thumbnail-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem; 
+}
+
+.lightbox-thumbnail-container .thumbnail {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent; 
+  transition: all 0.2s ease;
+}
+
+.lightbox-thumbnail-container .thumbnail.active {
+  border-color: var(--primary-orange);
+}
+
+.lightbox-thumbnail-container .thumbnail.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 100%, 0.5);
+}
+
+.lightbox-thumbnail-container .thumbnail:not(.active):hover {
+  opacity: 0.7; 
+}
+
 /* --- DESKTOP STYLES (min-width: 900px) --- */
 @media (min-width: 900px) {
   .main-header {
@@ -438,6 +549,14 @@ button {
 
   .add-to-cart-btn {
     width: 60%;
+  }
+
+  .lightbox-content {
+    padding: 0; 
+  }
+
+  .close-lightbox-btn {
+    right: 0; 
   }
 }
 
